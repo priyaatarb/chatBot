@@ -1,0 +1,266 @@
+:root {
+    --chat-bg: #2e323a;
+    --bot-msg-bg: hwb(156 0% 0%);
+    --user-msg-bg: #2e2e2e;
+    --text-color: #ffffff;
+    --header-bg: #141414;
+    --footer-bg: #141414;
+    --input-bg: #252525;
+    --border-color: #00ff99;
+    --hover-color: #00b894;
+}
+#chat-body::-webkit-scrollbar {
+    width: 8px;
+}
+ 
+#chat-body::-webkit-scrollbar-track {
+    background: #252525;
+    border-radius: 10px;
+}
+ 
+#chat-body::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 20px;
+    transition: background 0.3s;
+}
+ 
+#chat-body::-webkit-scrollbar-thumb:hover {
+    background: var(--hover-color);
+}
+ 
+ 
+#chat-body {
+    scrollbar-width: thin;
+    scrollbar-color: var(--border-color) #252525;
+}
+ 
+ 
+#chat-body {
+    scroll-behavior: smooth;
+}
+ 
+ 
+body {
+    background-color: black;
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+ 
+ 
+#chat-icon {
+    position: fixed;
+    bottom: 30px;
+    right: 20px;
+    width: 100px;
+    height: 100px;
+    background-color:transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+    animation: bounce 2s infinite ease-in-out;
+    overflow: hidden;
+    background-image: url('/v1/images/bots/Thrylox small v.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+ 
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+ 
+ 
+#chat-icon:hover {
+    transform: scale(1.1);
+    animation: none;
+}
+ 
+ 
+ 
+#wrapper {
+    display: none;
+    margin:0 85px 15px 0;
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 350px;
+    background: var(--chat-bg);
+    border-radius: 15px;
+    border: 1px solid #00ff99;
+    overflow: hidden;
+}
+ 
+ 
+.chatbot-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--chat-bg);
+    padding: 5px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+ 
+/* .chatbot-icon-container {
+    position: absolute;
+    left:15px;
+    z-index: 3;
+    background-color:transparent;
+    background-image: url('/v1/images/bots/Thrylox small v.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+   
+} */
+ 
+ 
+ 
+.chat-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--header-bg);
+    height: 50px;
+    width: auto;
+    color: var(--text-color);
+   
+    position: relative;
+    z-index: 2;
+ 
+}
+.heading {
+    font-size: 18px;
+    font-weight: bold;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+   
+}
+ 
+ 
+ 
+.close-icon {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    transition: transform 0.2s ease-in-out;
+}
+ 
+ 
+#chat-body {
+    padding: 15px;
+    background: var(--chat-bg);
+    height: 400px;
+    overflow-y: auto;
+}
+ 
+ 
+ 
+ 
+.chat-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+ 
+.bot-chat {
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+ 
+.user-chat {
+    justify-content: flex-end;
+}
+ 
+ 
+.chat-text {
+    max-width: 75%;
+    padding: 10px 15px;
+    border-radius: 15px;
+    font-size: 14px;
+    color: #000;
+    background: var(--bot-msg-bg);
+    font-weight: 500;
+ 
+}
+ 
+.user-chat .chat-text {
+    background: var(--user-msg-bg);
+    color: var(--text-color);
+}
+ 
+ 
+ 
+.chat-avatar{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    /* border: 2px solid var(--border-color);  */
+    background-color:transparent ;
+    background-image: url('/v1/images/bots/Thrylox small v.png');
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 3px;
+   
+}
+ 
+ 
+#chat-footer {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background: #2e323a;
+   
+    position: relative;
+}
+ 
+#chat-input {
+    flex-grow: 1;
+    padding: 12px;
+    width: 100%;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    font-size: 14px;
+    background: var(--input-bg);
+    color: var(--text-color);
+    padding-left: 15px;
+}
+ 
+#chat-input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+    font-style: italic;
+    opacity: 1;    
+}
+#send-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 45px;
+    border-radius: 50%;
+    border: none;
+    background: var(--input-bg);
+    cursor: pointer;
+    width: 20%;
+    transition: transform 0.2s ease-in-out;
+}
+ 
+#send-btn:hover,
+.close-icon:hover {
+    transform:  scale(1.1);
+}
+ 
