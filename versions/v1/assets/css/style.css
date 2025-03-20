@@ -64,7 +64,8 @@ body {
     z-index: 1000;
     animation: bounce 2s infinite ease-in-out;
     overflow: hidden;
-    background-image: url('/v1/images/bots/Thrylox small v.png');
+    background-image: url('/v1/images/bots/MrThrylogs.png');
+    filter: drop-shadow(2px 2px 5px rgb(83, 53, 167));
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -209,7 +210,8 @@ body {
     margin-right: 10px;
     /* border: 2px solid var(--border-color);  */
     background-color:transparent ;
-    background-image: url('/v1/images/bots/Thrylox small v.png');
+    background-image: url('/v1/images/bots/MrThrylogs.png');
+    filter: drop-shadow(2px 2px 5px rgb(83, 53, 167));
     background-size:contain;
     background-repeat: no-repeat;
     background-position: center;
